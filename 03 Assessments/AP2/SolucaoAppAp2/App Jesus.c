@@ -1,0 +1,143 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main(void)
+
+{
+do
+
+int fuga;
+int valor;
+int valor2;
+FILE *tol;
+char CODIGO [20];
+char COMPONENTE [20];
+char  QUANTIDADE [20] ;
+char PRECO [20] ;
+
+// cabecalho
+
+printf("================================");
+printf("  CADASTRO DE COMPONENTE");
+printf("================================\n");
+printf("\n");
+
+printf("DIGITE UMA ESCOLHA\n\n\n");
+printf(" CRIAR CADASTRO 1 \n");
+printf("LISTAR CADASTRO 2 \n");
+printf("DELETAR CADASTRO 3 \n");
+printf("SAIR DO CADASTRO 10 \n");
+scanf("%d", &valor2);
+scanf("%d", &fuga);
+
+switch ( valor ) {
+
+case 1 :
+switch ( valor2 )
+printf("INICIAR CADASTRO DIGITE 1\n");
+printf("SAIR DO CADASTRO DIGITE 10 \n");
+scanf("%d", &valor2);
+scanf("%d", &fuga);
+{
+case 1 :
+
+// criar para baixo
+
+printf("DIGITE O CODIGO: ");
+scanf("%s",  CODIGO);
+printf("DIGITE O COMPONENTE: ");
+scanf("%s" , COMPONENTE);
+printf("DIGITE A QUANTIDADE: ");
+    scanf("%s", QUANTIDADE);
+    printf("DIGITE O PRECO: ");
+    scanf("%s",  PRECO);
+
+tol = fopen("arquivo uol.txt", "w");
+if(tol == NULL)
+{
+printf("Erro na abertura do arquivo!");
+return 1;
+}
+fprintf(tol,"%s\n", CODIGO );
+fprintf(tol, "%s\n",COMPONENTE);
+fprintf(tol, "%s\n",QUANTIDADE);
+fprintf(tol, "%s\n",PRECO);
+fclose(tol);
+break;
+ default :
+    }
+   
+    printf("DIGITE 10 PARA SAIR");
+    scanf("%d",&fuga);
+     
+   
+case 2 :
+//  listar para baixo
+     printf("INICIAR LISAGEM DIGITE 2");
+    scanf("%d", &valor2);
+    printf("DIGITE 10 PARA SAIR");
+    scanf("%d",&fuga);
+    case 2 :
+
+tol = fopen("arquivo uol.txt", "r");
+
+if(tol == NULL)
+{
+printf("Erro na abertura do arquivo!");
+return 1;
+}
+
+fscanf(tol,"%s", CODIGO );
+printf("%s\n",CODIGO);
+fscanf(tol, "%s\n",COMPONENTE);
+printf("%s\n",COMPONENTE);
+fscanf(tol, "%s\n",QUANTIDADE);
+printf("%s\n",QUANTIDADE);
+fscanf(tol, "%s\n",PRECO);
+printf("%s\n",PRECO);
+
+fclose(tol);
+     break;
+     
+     printf("DIGITE 10 PARA SAIR");
+    scanf("%d",&fuga);
+     
+//deletar para baixo
+
+case 3 :
+     printf("DELETAR ARQUIVO 3");
+     scanf("%d", &valor2);
+     printf("DIGITE 10 PARA SAIR");
+     scanf("%d",&fuga);
+     
+    case 3 :
+   
+    tol = fopen("arquivo uol.txt", " w ");
+if(tol == NULL)
+{
+printf("Erro na abertura do arquivo!");
+return 1;
+}
+
+fprintf(tol,"%s\n", "  "  );
+fprintf(tol, "%s\n", "  "  );
+fprintf(tol, "%s\n",  " " );
+fprintf(tol, "%s\n", " " );
+
+ printf(" ARQUIVO DELETADO\n");
+   
+fclose(tol);
+   
+    break;
+     default :
+    printf("DIGITE 10 PARA SAIR");
+    scanf("%d",&fuga);
+     
+    }
+   
+system("pause");
+
+while (fuga = 10)
+{
+    printf(" FUI");
+}
+}

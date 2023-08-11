@@ -1,0 +1,25 @@
+DHL
+Rua dhl, 120 - Salvador
+71-9090-1111
+80
+_
+Correios
+rua x, 12
+71-9022-3311
+75
+_
+Fedex
+rua federal exp, 12
+71-4599-0988
+76
+_
+UPS
+rua ups, 922
+71-9022-4455
+130
+_
+Gollog
+rua das empresas, 192
+71-3455-9812
+97
+_

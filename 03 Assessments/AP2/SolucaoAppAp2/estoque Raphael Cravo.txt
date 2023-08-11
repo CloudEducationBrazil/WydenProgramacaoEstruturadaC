@@ -1,0 +1,3 @@
+id-1-id n-TINTA-n des-VERMELHA-des qtd-5-qtd
+id-2-id n-COLA-n des-BRANCA-des qtd-4-qtd
+id-3-id n-AGUA-n des-LITRO-des qtd-3-qtd

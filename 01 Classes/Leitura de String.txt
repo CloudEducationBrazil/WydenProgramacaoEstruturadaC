@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{   char nome[80];
+    //printf("Informe Nome: "); scanf("%79s", nome);
+
+    // strcpy(nome, "Julia Cardoso ");
+    //printf("Informe Nome: "); fgets(nome, sizeof(nome), stdin);
+    printf("%s", nome);
+
+    return 0;
+}

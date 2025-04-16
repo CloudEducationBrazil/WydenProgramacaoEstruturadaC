@@ -1,0 +1,18 @@
+int main() {
+    double numero, raiz;
+
+    // Entrada de dados
+    printf("Digite um número: ");
+    scanf("%lf", &numero);
+
+    // Verifica se o número é não-negativo
+    if (numero < 0) {
+        printf("Não é possível calcular a raiz quadrada de um número negativo.\n");
+    } else {
+        // Cálculo da raiz quadrada
+        raiz = sqrt(numero);
+        printf("A raiz quadrada de %.2f é %.2f\n", numero, raiz);
+    }
+
+    return 0;
+}

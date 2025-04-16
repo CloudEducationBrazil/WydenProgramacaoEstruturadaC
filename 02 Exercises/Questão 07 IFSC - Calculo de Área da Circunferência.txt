@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    // Declaração de variáveis
+    float raio, area;
+    const float PI = 3.14159;
+
+    // Entrada de dados
+    printf("Digite o valor do raio: ");
+    scanf("%f", &raio);
+
+    // Cálculo da área da circunferência
+    area = PI * raio * raio;
+
+    // Exibe o resultado
+    printf("A área da circunferência é: %.2f\n", area);
+
+    return 0;
+}

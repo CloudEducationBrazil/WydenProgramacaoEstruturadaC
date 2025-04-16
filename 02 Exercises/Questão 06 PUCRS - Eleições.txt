@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int main() {
+    int voto = -1;
+    int votosCandidatoA = 0, votosCandidatoB = 0, votosCandidatoC = 0, votosCandidatoD = 0;
+    int votosNulos = 0, votosBrancos = 0;
+
+    // Início da coleta de votos
+    while (voto != 0) {
+        printf("Digite o código do voto (1-4 para candidatos, 5 para nulo, 6 para em branco, 0 para finalizar): ");
+        scanf("%d", &voto);
+
+        // Verifica se o voto é válido
+        if (voto == 1) {
+            votosCandidatoA++;  // Incrementa o voto para o candidato 1
+        } else if (voto == 2) {
+            votosCandidatoB++;  // Incrementa o voto para o candidato 2
+        } else if (voto == 3) {
+            votosCandidatoC++;  // Incrementa o voto para o candidato 3
+        } else if (voto == 4) {
+            votosCandidatoD++;  // Incrementa o voto para o candidato 4
+        } else if (voto == 5) {
+            votosNulos++;  // Voto nulo
+        } else if (voto == 6) {
+            votosBrancos++;  // Voto em branco
+        } else if (voto != 0) {
+            printf("Código inválido! Tente novamente.\n");
+        }
+    }
+
+    // Exibição dos resultados
+    printf("\n--- Resultados da Eleição ---\n");
+    printf("Votos para o candidato A = Código 1: %d\n", votosCandidatoA);
+    printf("Votos para o candidato B = Código 2: %d\n", votosCandidatoB);
+    printf("Votos para o candidato C = Código 3: %d\n", votosCandidatoC);
+    printf("Votos para o candidato D = Código 4: %d\n", votosCandidatoD);
+    printf("Votos nulos: %d\n", votosNulos);
+    printf("Votos em branco: %d\n", votosBrancos);
+
+    return 0;
+}

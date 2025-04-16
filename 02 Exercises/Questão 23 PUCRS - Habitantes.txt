@@ -1,0 +1,58 @@
+#include <stdio.h>
+
+int main() {
+    char sexo;           // 'M' ou 'F' para masculino ou feminino
+    char corOlhos;       // 'A' para azul, 'V' para verde, 'C' para castanho
+    char corCabelos;     // 'L' para louros, 'C' para castanhos, 'P' para pretos
+    int idade;
+    
+    int maiorIdade = 0;
+    int contMulheresCondicao = 0;
+
+    // Leitura da idade
+    printf("Idade: ");
+    scanf("%d", &idade);
+
+    // Leitura dos habitantes
+    while (idade != -1) {
+        printf("\n--- Novo Habitante ---\n");
+
+        // Leitura do sexo
+        printf("Sexo (M para masculino, F para feminino): ");
+        scanf(" %c", &sexo);  // Espaço antes do %c para limpar o buffer
+
+        // Leitura da cor dos olhos
+        printf("Cor dos olhos (A para azul, V para verde, C para castanho): ");
+        scanf(" %c", &corOlhos);
+
+        // Leitura da cor dos cabelos
+        printf("Cor dos cabelos (L para louros, C para castanhos, P para pretos): ");
+        scanf(" %c", &corCabelos);
+
+        // Leitura da idade
+        printf("Idade: ");
+        scanf("%d", &idade);
+
+        // Verifica a maior idade
+        if (idade > maiorIdade) {
+            maiorIdade = idade;
+        }
+
+        // Verifica se a pessoa é mulher (sexo feminino), idade entre 18 e 35
+        // e se tem olhos verdes e cabelos louros
+        if ((sexo == 'F' || sexo == 'f') && idade >= 18 && idade <= 35) {
+            if (corOlhos == 'V' || corOlhos == 'v') {  // Olhos verdes
+                if (corCabelos == 'L' || corCabelos == 'l') {  // Cabelos louros
+                    contMulheresCondicao++;
+                }
+            }
+        }
+    }
+
+    // Resultado final
+    printf("\n--- Resultados da Pesquisa ---\n");
+    printf("Maior idade dos habitantes: %d anos\n", maiorIdade);
+    printf("Quantidade de mulheres entre 18 e 35 anos com olhos verdes e cabelos louros: %d\n", contMulheresCondicao);
+
+    return 0;
+}

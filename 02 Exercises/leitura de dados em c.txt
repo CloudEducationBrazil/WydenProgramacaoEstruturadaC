@@ -1,0 +1,30 @@
+#include <stdio.h>
+
+int main() {
+    char nome[50];
+    char cidade[50];
+    int idade;
+    char sexo;
+
+    printf("Digite o nome da pessoa: ");
+    scanf("%[^\n]", nome);  // Lê até a nova linha, permitindo espaços
+    // fgets(nome, sizeof(nome), stdin);
+
+    getchar();  // Para consumir o '\n' restante após a leitura do nome
+
+    printf("Digite o nome da cidade: ");
+    scanf("%[^\n]", cidade);  // Lê até a nova linha, permitindo espaços
+    // fgets(cidade, sizeof(cidade), stdin);
+
+    printf("Digite o sexo: ");
+    scanf(" %c", &sexo);  // Lê até a nova linha, permitindo espaços
+
+    printf("Digite a idade: ");
+    scanf("%d", &idade);  // Lê até a nova linha, permitindo espaços
+
+    printf("\n--- Informações ---\n");
+    printf("Nome da pessoa: %s\n", nome);
+    printf("Nome da cidade: %s\n", cidade);
+
+    return 0;
+}

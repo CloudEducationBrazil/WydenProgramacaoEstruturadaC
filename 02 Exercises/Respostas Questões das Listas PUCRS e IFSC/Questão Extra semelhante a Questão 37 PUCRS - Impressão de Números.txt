@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main()
+{
+    for (int x = 1; x <= 20; x++) {
+      for (int y = 1; y <= x; y++)
+        printf("%d ", x);
+      printf("\n");
+    }
+
+    return 0;
+}

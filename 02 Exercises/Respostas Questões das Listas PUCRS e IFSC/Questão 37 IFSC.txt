@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main()
+{    int dias, meses, idade, total_dias;
+    
+    printf("Informe sua idade : "); scanf("%d", &idade);
+    printf("Informe quantos meses: "); scanf("%d", &meses);
+    printf("Informe quantos dias: "); scanf("%d", &dias);
+    
+    // 1 ano possui 12 meses e 12 * 30, (cada mes possui 30 dias), eh igual a 360 dias no ano
+    total_dias = (idade * 360) + (meses * 30) + dias;
+    
+    printf("Total de dias: %d ", total_dias);
+
+    return 0;
+}

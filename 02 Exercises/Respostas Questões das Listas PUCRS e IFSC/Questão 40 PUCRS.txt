@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main()
+{
+    int soma, fat, n, m;
+    
+    printf("Informe quantidade de números inteitos positivos: "); scanf("%d", &n);
+    
+    for (int x = 1; x <= n; x++) {
+       printf("Informe um inteiro positivo: "); scanf("%d", &m);
+       
+       // somatório dos inteiros de 1 até m.
+       soma = 0;
+       for (int aux = 1; aux <= m; aux++) {
+           soma += aux;
+       }
+
+       printf("somatório: %d \n", soma);
+
+       // fatorial de m.    
+       if (m == 0 || m == 1) 
+          fat = 1;       
+       else {
+           fat = m;    
+           for (int aux = m - 1; aux >= 1; aux--) {
+             fat = fat * aux;
+           }
+       }
+    
+       printf("Fatorial: %d \n", fat);
+    }
+
+    return 0;
+}

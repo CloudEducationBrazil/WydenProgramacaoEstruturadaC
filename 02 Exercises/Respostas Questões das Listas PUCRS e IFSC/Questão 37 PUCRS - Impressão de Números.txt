@@ -1,0 +1,12 @@
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{   int x;
+    printf("Informe p valor de x: "); scanf("%d", &x);
+    
+    for (int i = 1; i <= 20; i++)
+       printf("%.0f ", pow(x, i));
+    
+    return 0;
+}

@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main()
+{
+    int meses, dias, total_dias;
+    
+    printf("Informe quantos meses: "); scanf("%d", &meses);
+    printf("Informe quantos dias: "); scanf("%d", &dias);
+    
+    // considerenado que cada mes possui 30 dias
+    total_dias = (meses - 1) * 30 + dias;
+    
+    printf("Total de dias: %d ", total_dias);
+
+    return 0;
+}

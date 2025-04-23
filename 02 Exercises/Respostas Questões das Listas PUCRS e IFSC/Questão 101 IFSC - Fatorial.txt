@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main()
+{
+    int fat, num;
+    
+    printf("Informe um inteiro positivo: "); scanf("%d", &num);
+    
+    if (num < 0)
+        printf("Valor inválido. Não existe Fatorial para números inteiros negativos.\n");
+    else {
+        if (num == 0 || num == 1) 
+            fat = 1;
+        else { // fatorial de num    
+            fat = num;    
+            for (int aux = num - 1; aux >= 1; aux--)
+               fat = fat * aux;
+        }
+        printf("Fatorial: %d \n", fat);
+    }
+    
+    return 0;
+}

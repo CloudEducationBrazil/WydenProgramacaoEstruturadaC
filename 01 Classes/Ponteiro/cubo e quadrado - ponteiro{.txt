@@ -1,0 +1,17 @@
+int cubo(int n, int *x){
+    *x = n * n;
+    return n * n * n; 
+}
+
+#include <stdio.h>
+int main()
+{
+    int n, c, q;
+    
+    printf("Informe um numero: "); scanf("%d", &n);
+
+    printf("Cubo: %d ", cubo(n, &q));
+    printf("Quadrao: %d ", q);
+
+    return 0;
+}

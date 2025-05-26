@@ -1,0 +1,14 @@
+#include <stdio.h>
+int somarQtdTermosPares(int qtd){
+    if (qtd == 0) { 
+        return 0; 
+    }
+    
+   printf("Termo: %d %d\n", qtd, (qtd * 2));
+   return qtd * 2 + somarQtdTermosPares(qtd-1);
+}
+
+int main()
+{  printf("Total: %d", somarQtdTermosPares(5));
+   return 0;
+}

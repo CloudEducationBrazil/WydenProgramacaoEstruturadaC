@@ -1,0 +1,14 @@
+#include <stdio.h>
+int somarNumerosPares(int par){
+    if (par == 0) { 
+        return 0; 
+    }
+    
+    printf("Termo: %d \n", par);
+    return par + somarNumerosPares(par-2);
+}
+
+int main()
+{  printf("Total: %d", somarNumerosPares(6));
+   return 0;
+}

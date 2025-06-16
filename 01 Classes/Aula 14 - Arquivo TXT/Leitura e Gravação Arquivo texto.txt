@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{   FILE *arq;
+    char nome[55];
+
+    arq = fopen("teste.txt", "at");
+    
+    if (arq == NULL) {
+        printf("Erro arq ...");
+        return 1;
+    }    
+    
+    strcpy(nome, "\njujus");
+    //fwrite(nome, sizeof(char), strlen(nome), arq); // grava do lado da linha
+    fprintf(arq, "%s\n", nome);
+
+    fclose(arq);
+
+    return 0;
+}

@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main()
+{   int a;
+    float b;
+    char sexo;
+    char nome[50];
+    
+    printf("Número a: "); scanf("%d", &a);
+    printf("Número b: "); scanf("%f", &b);
+    printf("Sexo: "); scanf(" %c", &sexo);
+    printf("Nome: "); scanf(" %s", nome);
+    
+    printf("Número a: "); scanf("%d", &a);
+    printf("Sexo: "); scanf(" %c", &sexo);
+    printf("Número b: "); scanf("%f", &b);
+    printf("Nome: "); scanf(" %49s", nome);
+    
+    printf("Sexo: %c \n", sexo);
+    printf("Nome: %s \n", nome);
+    printf("Número %.2f \n", b);
+
+    getchar(); 
+    printf("Nome5: "); fgets(nome, 50, stdin);
+    printf("Nome: %s", nome);
+    
+    return 0;
+}

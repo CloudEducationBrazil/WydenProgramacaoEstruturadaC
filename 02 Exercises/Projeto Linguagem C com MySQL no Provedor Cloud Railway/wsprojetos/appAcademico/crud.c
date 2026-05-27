@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <mysql.h>
+#include <C:/Users/heleno/Downloads/wspython/appAcademico/mysql/include/mysql.h>
+//#include  <mysql.h>
 
 void limparBuffer() {
     int c;
@@ -116,16 +117,17 @@ int main() {
     MYSQL *conn;
 
     // mysql://root:nbAWTAWJenwSAtiQtzlMNRtsiDiZZITI@yamabiko.proxy.rlwy.net:43507/railway
-    char *server = "yamabiko.proxy.rlwy.net";
+ /*   char *server = "yamabiko.proxy.rlwy.net";
     unsigned int port = 43507;    
     char *user = "root";
     char *password = "nbAWTAWJenwSAtiQtzlMNRtsiDiZZITI";
     char *database = "railway";
-
-/*  char *server = "localhost";
+*/
+  char *server = "localhost";
+    unsigned int port = 3306;    
     char *user = "root";
     char *password = "123456";
-    char *database = "agendadb"; */
+    char *database = "agendadb";
 
     conn = mysql_init(NULL);
 

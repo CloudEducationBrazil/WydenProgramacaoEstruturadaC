@@ -1,0 +1,962 @@
+Lista de Exercícios Introdução a programação 
+
+Exercício 1:
+
+#include <stdio.h>
+int main (){
+    float largura, comprimento, area;
+    printf("--- Sistema de Vendas Imobilis---\n");
+    printf(" Digite a largura do terreno (em metros):");
+    scanf("%f", &largura);
+    printf(" Digite o comprimento do terreno (em metros):");
+    scanf("%f", &comprimento);
+    area = largura * comprimento;
+    printf("\n-------------------------\n");
+    printf(" A area total do terreno é: %.2f m²\n", area );
+    printf("-----------------------------\n");
+    
+    return 0;
+    
+}
+
+Exercício 2:
+
+#include <stdio.h>
+int main (){
+    int cavalos, totalFerraduras;
+    printf("--- calculo de ferraduras---\n");
+    
+    printf(" Digite a quantidade de cavalos comprados:");
+    scanf("%d", &cavalos);
+    
+    totalFerraduras = cavalos * 4;
+    
+    printf(" Para equipar %d cavalos sao necessarios %d ferraduras.\n", cavalos,totalFerraduras);
+   
+ 
+    return 0;
+    
+}
+
+Exercício 3:
+
+#include <stdio.h>
+int main (){
+    int qtdPaes , qtdBroas;
+    float totalArrecadado , valorPoupanca;
+    
+    printf("--- Padaria Hot Pao: Controle de Vendas---\n");
+    
+    printf(" Quantidade de paes vendidos:");
+    scanf("%d", &qtdPaes);
+    
+    printf(" Quantidade de broas vendidos:");
+    scanf("%d", &qtdBroas);
+    
+    totalArrecadado = (qtdPaes * 0,12) + (qtdBroas * 1.50);
+    
+    valorPoupanca = totalArrecadado * 0.10;
+    
+    printf("\n===========================\n");
+    printf(" Total arrecadado: R$ %.2f\n", totalArrecadado);
+    printf(" valor a guardar na poupanca: R$ %.2f\n", valorPoupanca);
+    printf("==============================\n");
+   
+ 
+    return 0;
+    
+}
+
+Exercício 4:
+
+#include <stdio.h>
+#include <ctype.h>
+int main (){
+    char nome [100];
+    int idade, totalDias;
+    
+    printf("--- Contador de dias de Vida---\n");
+    
+    printf(" Digite o seu nome:");
+    scanf("%[^\n]", nome);
+    
+    printf(" Digite sua Idade:");
+    scanf("%d", &idade);
+    
+    totalDias = idade * 365;
+    
+   
+    
+    printf("\n%s, VOCE JA VIVEU %d DIAS \n", nome , totalDias);
+    
+ 
+    return 0;
+    
+}
+
+
+
+
+
+
+
+Exercício 5:
+
+#include <stdio.h>
+
+int main() {
+    
+    float precoLitro, valorPagamento, litrosCalculados;
+
+    printf("--- Posto de Gasolina ---\n");
+
+   
+    printf("Digite o preco do litro da gasolina: ");
+    scanf("%f", &precoLitro);
+
+    
+    printf("Digite o valor que deseja colocar (R$): ");
+    scanf("%f", &valorPagamento);
+
+    
+    if (precoLitro > 0) {
+        
+        litrosCalculados = valorPagamento / precoLitro;
+
+        
+        printf("\nCom R$ %.2f, voce colocou %.2f litros de gasolina.\n", valorPagamento, litrosCalculados);
+    } else {
+        printf("\nErro: O preco do litro deve ser maior que zero.\n");
+    }
+
+    return 0;
+}
+
+Exercício 6:
+
+#include <stdio.h>
+
+int main() {
+    
+    const float PRECO_QUILO = 12.00;
+    float pesoRefeicao, valorTotal;
+
+    printf("--- Restaurante Bem-Bao ---\n");
+
+    
+    printf("Digite o peso da refeicao (em kg): ");
+    scanf("%f", &pesoRefeicao);
+
+    
+    valorTotal = pesoRefeicao * PRECO_QUILO;
+
+    
+    printf("\nResumo do Pedido:\n");
+    printf("Peso: %.3f kg\n", pesoRefeicao);
+    printf("Valor a pagar: R$ %.2f\n", valorTotal);
+
+    return 0;
+}
+
+Exercício 7:
+
+#include <stdio.h>
+
+int main() {
+    int dia, mes, diasPassados;
+
+    printf("--- Calculador de Dias Decorridos ---\n");
+
+    
+    printf("Digite o dia (1-30): ");
+    scanf("%d", &dia);
+
+    
+    printf("Digite o mes (1-12): ");
+    scanf("%d", &mes);
+
+    /* Lógica: Se estamos no mês 3, passaram-se 2 meses completos (janeiro e fevereiro).
+       Portanto, multiplicamos (mes - 1) por 30 e somamos os dias do mês atual.
+    */
+    diasPassados = ((mes - 1) * 30) + dia;
+
+    
+    printf("\nDesde o inicio do ano, se passaram %d dias.\n", diasPassados);
+
+    return 0;
+}
+
+Exercício 8:
+
+#include <stdio.h>
+
+int main() {
+    float nota1, nota2, nota3, mediaPonderada;
+
+    printf("--- Calculo de Media Ponderada ---\n");
+
+    
+    printf("Digite a primeira nota (peso 1): ");
+    scanf("%f", &nota1);
+
+    printf("Digite a segunda nota (peso 2): ");
+    scanf("%f", &nota2);
+
+    printf("Digite a terceira nota (peso 3): ");
+    scanf("%f", &nota3);
+
+    
+    
+    mediaPonderada = (nota1 * 1 + nota2 * 2 + nota3 * 3) / 6;
+
+    
+    printf("\nA media final do aluno e: %.2f\n", mediaPonderada);
+
+    return 0;
+}
+
+Exercício 9:
+
+#include <stdio.h>
+
+int main() {
+    
+    int qtdPequena, qtdMedia, qtdGrande;
+    float valorTotal;
+
+    
+    const float PRECO_P = 10.00;
+    const float PRECO_M = 12.00;
+    const float PRECO_G = 15.00;
+
+    printf("--- Sistema de Vendas de Camisetas ---\n");
+
+    
+    printf("Quantidade de camisetas PEQUENAS: ");
+    scanf("%d", &qtdPequena);
+
+    printf("Quantidade de camisetas MEDIAS: ");
+    scanf("%d", &qtdMedia);
+
+    printf("Quantidade de camisetas GRANDES: ");
+    scanf("%d", &qtdGrande);
+
+    
+    valorTotal = (qtdPequena * PRECO_P) + (qtdMedia * PRECO_M) + (qtdGrande * PRECO_G);
+
+    
+    printf("\n--- Resumo da Venda ---\n");
+    printf("Total arrecadado: R$ %.2f\n", valorTotal);
+
+    return 0;
+}
+
+Exercício 10:
+
+QUESTAO 10
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float x1, y1, x2, y2, distancia;
+
+    printf("Digite as coordenadas do primeiro ponto (x1 y1): ");
+    scanf("%f %f", &x1, &y1);
+
+    printf("Digite as coordenadas do segundo ponto (x2 y2): ");
+    scanf("%f %f", &x2, &y2);
+
+    distancia = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
+
+    printf("Distancia entre os pontos: %.2f\n", distancia);
+
+    return 0;
+}
+
+Exercício 11:
+#include <stdio.h>
+
+int main() {
+    int totalDias;
+    int anos, meses, dias;
+
+    printf("Digite o total de dias sem acidentes: ");
+    scanf("%d", &totalDias);
+
+    totalDias = totalDias % 360;
+ 
+    printf("Tempo sem acidentes:\n");
+    printf("%d ano(s)\n", anos);
+    printf("%d mes(es)\n", meses);
+    printf("%d dia(s)\n", dias);
+
+    return 0;
+}
+
+Exercício 12: 
+#include <stdio.h>
+
+int main() {
+    float salarioInicial, salarioComAumento, salarioFinal;
+
+    printf("Digite o salario do funcionario: ");
+    scanf("%f", &salarioInicial);
+
+    salarioComAumento = salarioInicial * 1.15;
+
+    salarioFinal = salarioComAumento * 0.92;
+
+    printf("\nSalario inicial: R$ %.2f\n", salarioInicial);
+    printf("Salario com aumento: R$ %.2f\n", salarioComAumento);
+    printf("Salario final (apos impostos): R$ %.2f\n", salarioFinal);
+
+    return 0;
+}
+
+Exercício 13: 
+#include <stdio.h>
+
+int main() {
+    int numero;
+    int centena, dezena, unidade;
+
+    printf("Digite um numero inteiro (ate 3 digitos): ");
+    scanf("%d", &numero);
+
+    centena = numero / 100;
+    dezena = (numero % 100) / 10;
+    unidade = numero % 10;
+
+    printf("CENTENA = %d\n", centena);
+    printf("DEZENA = %d\n", dezena);
+    printf("UNIDADE = %d\n", unidade);
+
+    return 0;
+}
+
+Exercício 14:
+#include <stdio.h>
+
+int main() {
+    float R, area;
+    const float pi = 3.14;
+
+    printf("Digite o raio da pizza: ");
+    scanf("%f", &R);
+
+    area = pi * R * R;
+
+    printf("A area da pizza é: %.2f\n", area);
+
+    return 0;
+}
+
+Exercício 15:
+#include <stdio.h>
+
+int main() {
+    float total, felipe;
+    int parte_inteira;
+
+    printf("Digite o valor total da conta: ");
+    scanf("%f", &total);
+
+    parte_inteira = total / 3;
+
+    felipe = total - (2 * parte_inteira);
+
+    printf("Carlos paga: R$ %d.00\n", parte_inteira);
+    printf("Andre paga: R$ %d.00\n", parte_inteira);
+    printf("Felipe paga: R$ %.2f\n", felipe);
+
+    return 0;
+}
+
+Exercicio 16:
+#include <stdio.h>
+
+int main() {
+    int quantidade;
+    float queijo, presunto, carne;
+
+    printf("Digite a quantidade de sanduiches: ");
+    scanf("%d", &quantidade);
+
+    queijo = (quantidade * 100) / 1000.0;
+    presunto = (quantidade * 50) / 1000.0;
+    carne = (quantidade * 100) / 1000.0;
+
+    printf("Queijo necessario: %.2f kg\n", queijo);
+    printf("Presunto necessario: %.2f kg\n", presunto);
+    printf("Carne necessaria: %.2f kg\n", carne);
+
+    return 0;
+}
+
+Exercício 17:
+#include <stdio.h>
+
+int main() {
+    float celsius, fahrenheit;
+
+    printf("Digite a temperatura em Celsius: ");
+    scanf("%f", &celsius);
+
+    fahrenheit = (9.0 / 5.0) * celsius + 32;
+
+    printf("Temperatura em Fahrenheit: %.2f\n", fahrenheit);
+
+    return 0;
+}
+
+Exercício 18:
+#include <stdio.h>
+
+int main() {
+    float horas_normais, horas_extras;
+    float salario_bruto, salario_liquido;
+
+    printf("Digite a quantidade de horas normais: ");
+    scanf("%f", &horas_normais);
+
+    printf("Digite a quantidade de horas extras: ");
+    scanf("%f", &horas_extras);
+
+    salario_bruto = (horas_normais * 10.0) + (horas_extras * 15.0);
+
+    salario_liquido = salario_bruto * 0.9;
+
+    printf("Salario bruto: R$ %.2f\n", salario_bruto);
+    printf("Salario liquido: R$ %.2f\n", salario_liquido);
+
+    return 0;
+}
+
+Exercício 19 :
+#include <stdio.h>
+
+int main() {
+    int quantidade;
+    float custo_total;
+
+    printf("Digite a quantidade de frangos: ");
+    scanf("%d", &quantidade);
+
+    custo_total = quantidade * 11.0;
+
+    printf("Gasto total da granja: R$ %.2f\n", custo_total);
+
+    return 0;
+}
+
+Exercício 20:
+#include <stdio.h>
+
+int main() {
+    int blusas;
+    float novelos, consumo;
+
+    printf("Digite a quantidade de blusas produzidas: ");
+    scanf("%d", &blusas);
+
+    printf("Digite a quantidade de novelos utilizados: ");
+    scanf("%f", &novelos);
+
+    consumo = novelos / blusas;
+
+    printf("Quantidade de novelos por blusa: %.2f\n", consumo);
+
+    return 0;
+}
+
+Exercício 21:
+#include <stdio.h>
+
+int main() {
+    int lata, garrafa600, garrafa2L;
+    float total_litros;
+
+    printf("Quantidade de latas (350 ml): ");
+    scanf("%d", &lata);
+
+    printf("Quantidade de garrafas (600 ml): ");
+    scanf("%d", &garrafa600);
+
+    printf("Quantidade de garrafas (2 L): ");
+    scanf("%d", &garrafa2L);
+
+    total_litros = (lata * 0.35) + (garrafa600 * 0.6) + (garrafa2L * 2.0);
+
+    printf("Total de refrigerante: %.2f litros\n", total_litros);
+
+    return 0;
+}
+
+Exercício 22:
+#include <stdio.h>
+
+int main() {
+    int m1, m5, m10, m25, m50, m1real;
+    float total;
+
+    printf("Quantidade de moedas de 1 centavo: ");
+    scanf("%d", &m1);
+
+    printf("Quantidade de moedas de 5 centavos: ");
+    scanf("%d", &m5);
+
+    printf("Quantidade de moedas de 10 centavos: ");
+    scanf("%d", &m10);
+
+    printf("Quantidade de moedas de 25 centavos: ");
+    scanf("%d", &m25);
+
+    printf("Quantidade de moedas de 50 centavos: ");
+    scanf("%d", &m50);
+
+    printf("Quantidade de moedas de 1 real: ");
+    scanf("%d", &m1real);
+
+    total = (m1 * 0.01) +
+            (m5 * 0.05) +
+            (m10 * 0.10) +
+            (m25 * 0.25) +
+            (m50 * 0.50) +
+            (m1real * 1.00);
+
+    printf("Total economizado: R$ %.2f\n", total);
+
+    return 0;
+}
+
+Exercício 23 :
+#include <stdio.h>
+
+int main() {
+    float altura_pessoa, sombra_pessoa;
+    float sombra_predio, altura_predio;
+
+    printf("Digite a sua altura (m): ");
+    scanf("%f", &altura_pessoa);
+
+    printf("Digite o tamanho da sua sombra (m): ");
+    scanf("%f", &sombra_pessoa);
+
+    printf("Digite o tamanho da sombra do predio (m): ");
+    scanf("%f", &sombra_predio);
+
+    altura_predio = (altura_pessoa * sombra_predio) / sombra_pessoa;
+
+    printf("A altura do predio é: %.2f metros\n", altura_predio);
+
+    return 0;
+}
+
+Exercício 24: 
+#include <stdio.h>
+
+int main() {
+    float litros_refresco, agua, suco;
+
+    printf("Digite a quantidade de refresco a ser feito (litros): ");
+    scanf("%f", &litros_refresco);
+
+    agua = 0.8 * litros_refresco;
+    suco = 0.2 * litros_refresco;
+
+    printf("Quantidade de agua: %.2f litros\n", agua);
+    printf("Quantidade de suco de maracuja: %.2f litros\n", suco);
+
+    return 0;
+}
+
+Exercício 25:
+#include <stdio.h>
+
+int main() {
+    float raio, altura, volume;
+    const float pi = 3.14;
+
+    printf("Digite o raio da caixa d'agua (m): ");
+    scanf("%f", &raio);
+
+    printf("Digite a altura da caixa d'agua (m): ");
+    scanf("%f", &altura);
+
+    volume = pi * raio * raio * altura;
+
+    printf("O volume da caixa d'agua é: %.2f m³\n", volume);
+
+    return 0;
+}
+
+Exercício 26 :
+#include <stdio.h>
+
+int main() {
+    float num1, num2, num3, resultado;
+
+    printf("Digite o primeiro numero: ");
+    scanf("%f", &num1);
+
+    printf("Digite o segundo numero: ");
+    scanf("%f", &num2);
+
+    printf("Digite o terceiro numero: ");
+    scanf("%f", &num3);
+
+    resultado = num1 * num2 * num3;
+
+    printf("O resultado da multiplicacao é: %.2f\n", resultado);
+
+    return 0;
+}
+
+Exercício 27: 
+#include <stdio.h>
+
+int main() {
+    float num1, num2, resultado;
+
+    printf("Digite o primeiro numero: ");
+    scanf("%f", &num1);
+
+    printf("Digite o segundo numero (diferente de zero): ");
+    scanf("%f", &num2);
+
+    resultado = num1 / num2;
+
+    printf("O resultado da divisao é: %.2f\n", resultado);
+
+    return 0;
+}
+
+Exercício 28: 
+#include <stdio.h>
+
+int main() {
+    float nota1, nota2, media;
+
+    printf("Digite a primeira nota: ");
+    scanf("%f", &nota1);
+
+    printf("Digite a segunda nota: ");
+    scanf("%f", &nota2);
+
+    media = (nota1 * 2 + nota2 * 3) / 5.0;
+
+    printf("A media ponderada é: %.2f\n", media);
+
+    return 0;
+}
+
+Exercício 29:
+#include <stdio.h>
+
+int main() {
+    float preco, novo_preco;
+
+    printf("Digite o preco do produto: R$ ");
+    scanf("%f", &preco);
+
+    novo_preco = preco * 0.9;
+
+    printf("O novo preco com desconto de 10%% é: R$ %.2f\n", novo_preco);
+
+    return 0;
+}
+
+Exercício 30 :
+#include <stdio.h>
+
+int main() {
+    float salario_fixo, vendas, comissao, salario_final;
+
+    printf("Digite o salario fixo do funcionario: R$ ");
+    scanf("%f", &salario_fixo);
+
+    printf("Digite o valor das vendas realizadas: R$ ");
+    scanf("%f", &vendas);
+
+    comissao = 0.04 * vendas;
+    salario_final = salario_fixo + comissao;
+
+    printf("Comissao: R$ %.2f\n", comissao);
+    printf("Salario final: R$ %.2f\n", salario_final);
+
+    return 0;
+}
+
+Exercício 31:
+#include <stdio.h>
+
+int main() {
+    float peso, peso_engordar, peso_emagrecer;
+
+    printf("Digite o peso da pessoa (kg): ");
+    scanf("%f", &peso);
+
+    peso_engordar = peso * 1.15;   // aumenta 15%
+    peso_emagrecer = peso * 0.80;  // reduz 20%
+
+    printf("Peso se engordar 15%%: %.2f kg\n", peso_engordar);
+    printf("Peso se emagrecer 20%%: %.2f kg\n", peso_emagrecer);
+
+    return 0;
+}
+
+Exercício 32:
+
+#include <stdio.h>
+
+int main() {
+    float pesoKg, pesoGramas;
+
+    printf("--- Conversor de Quilos para Gramas ---\n");
+
+    
+    printf("Digite o peso em quilos (kg): ");
+    scanf("%f", &pesoKg);
+
+    
+  
+    pesoGramas = pesoKg * 1000;
+
+   
+    printf("\nO peso informado equivale a: %.2f gramas.\n", pesoGramas);
+
+    return 0;
+}
+
+Exercício 33:
+
+#include <stdio.h>
+
+int main() {
+    float baseMaior, baseMenor, altura, area;
+
+    printf("--- Calculo da Area de um Trapezio ---\n");
+
+    
+    printf("Digite o valor da base maior: ");
+    scanf("%f", &baseMaior);
+
+    printf("Digite o valor da base menor: ");
+    scanf("%f", &baseMenor);
+
+    printf("Digite o valor da altura: ");
+    scanf("%f", &altura);
+
+    
+    area = ((baseMaior + baseMenor) * altura) / 2;
+
+    
+    printf("\nA area do trapezio e: %.2f\n", area);
+
+    return 0;
+}
+
+Exercício 34:
+
+#include <stdio.h>
+
+int main() {
+    float lado, area;
+
+    printf("--- Calculo da Area do Quadrado ---\n");
+
+    
+    printf("Digite o valor do lado do quadrado: ");
+    scanf("%f", &lado);
+
+    
+    area = lado * lado;
+
+    
+    printf("\nA area do quadrado e: %.2f\n", area);
+
+    return 0;
+}
+
+Exercício: 35
+
+#include <stdio.h>
+
+int main() {
+    float diagMaior, diagMenor, area;
+
+    printf("--- Calculo da Area de um Losango ---\n");
+
+    
+    printf("Digite o valor da diagonal maior (D): ");
+    scanf("%f", &diagMaior);
+
+    
+    printf("Digite o valor da diagonal menor (d): ");
+    scanf("%f", &diagMenor);
+
+    
+    area = (diagMaior * diagMenor) / 2;
+
+    
+    printf("\nA area do losango e: %.2f\n", area);
+
+    return 0;
+}
+
+Exercício 36:
+
+#include <stdio.h>
+
+int main() {
+    float salarioMinimo, salarioFuncionario, quantidadeMinimos;
+
+    printf("--- Calculo de Quantidade de Salarios Minimos ---\n");
+
+    
+    printf("Digite o valor do salario minimo atual: R$ ");
+    scanf("%f", &salarioMinimo);
+
+    
+    printf("Digite o valor do salario do funcionario: R$ ");
+    scanf("%f", &salarioFuncionario);
+
+    
+    if (salarioMinimo > 0) {
+        
+        quantidadeMinimos = salarioFuncionario / salarioMinimo;
+
+        
+        printf("\nO funcionario recebe o equivalente a %.2f salarios minimos.\n", quantidadeMinimos);
+    } else {
+        printf("\nErro: O valor do salario minimo deve ser maior que zero.\n");
+    }
+
+    return 0;
+}
+
+Exercício 37:
+
+#include <stdio.h>
+
+int main() {
+    int num, i;
+
+    printf("--- Gerador de Tabuada ---\n");
+
+    
+    printf("Digite um numero inteiro: ");
+    scanf("%d", &num);
+
+    printf("\nTabuada do %d:\n", num);
+    printf("------------------\n");
+
+    
+    for(i = 1; i <= 10; i++) {
+        printf("%d x %d = %d\n", num, i, num * i);
+    }
+
+    printf("------------------\n");
+
+    return 0;
+}
+
+Exercício 38:
+
+#include <stdio.h>
+
+int main() {
+    int anoNascimento, anoAtual, idadeAnos;
+    int idadeMeses, idadeDias, idadeSemanas;
+
+    printf("--- Calculadora de Idade Detalhada ---\n");
+
+    
+    printf("Digite o ano de nascimento: ");
+    scanf("%d", &anoNascimento);
+
+    printf("Digite o ano atual: ");
+    scanf("%d", &anoAtual);
+
+    
+    
+    idadeAnos = anoAtual - anoNascimento;
+
+    
+    idadeMeses = idadeAnos * 12;
+
+    
+    
+    idadeDias = idadeAnos * 365;
+
+    
+    idadeSemanas = idadeAnos * 52;
+
+    
+    printf("\n--- Resultados ---\n");
+    printf("a) Idade em anos:    %d anos\n", idadeAnos);
+    printf("b) Idade em meses:   %d meses\n", idadeMeses);
+    printf("c) Idade em dias:    %d dias\n", idadeDias);
+    printf("d) Idade em semanas: %d semanas\n", idadeSemanas);
+
+    return 0;
+}
+
+Exercício 39:
+
+#include <stdio.h>
+
+int main() {
+    
+    float salario = 1200.00;
+    float conta1 = 200.00;
+    float conta2 = 120.00;
+    float multa = 0.02; // 2% equivale a 0.02
+    float saldoFinal;
+
+    printf("--- Gerenciador de Contas do Joao ---\n");
+
+    
+    
+    conta1 = conta1 + (conta1 * multa);
+    conta2 = conta2 + (conta2 * multa);
+
+    
+    saldoFinal = salario - conta1 - conta2;
+
+    
+    printf("Salario inicial: R$ %.2f\n", salario);
+    printf("Conta 1 com multa (2%%): R$ %.2f\n", conta1);
+    printf("Conta 2 com multa (2%%): R$ %.2f\n", conta2);
+    printf("-------------------------------\n");
+    printf("Restara do salario: R$ %.2f\n", saldoFinal);
+
+    return 0;
+}
+
+Exercício 40:
+
+#include <stdio.h>
+#include <math.h> 
+
+int main() {
+    float cateto1, cateto2, hipotenusa;
+
+    printf("--- Calculo da Hipotenusa (Teorema de Pitagoras) ---\n");
+
+    
+    printf("Digite o valor do primeiro cateto: ");
+    scanf("%f", &cateto1);
+
+    printf("Digite o valor do segundo cateto: ");
+    scanf("%f", &cateto2);
+
+    
+    
+    hipotenusa = sqrt(pow(cateto1, 2) + pow(cateto2, 2));
+
+    
+    printf("\nO valor da hipotenusa e: %.2f\n", hipotenusa);
+
+    return 0;
+}
